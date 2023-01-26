@@ -2,5 +2,4 @@
 drought/
 shapes/
 *.nc
-.ipynb_checkpoints/
-
+.ipynb_checkpoints

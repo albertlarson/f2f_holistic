@@ -1,8 +1,5 @@
 # f2f_holistic
 
-this repository serves as the appendix for chapter five of my thesis.<br><br><br>
-
-
 
 the motivation behind this work is to extend <a target='_blank' href = 'https://github.com/albertlarson/f2f'>flux to flow</a>,<br>
 a paper written in the spring, summer, and early fall 2022.
@@ -48,16 +45,18 @@ the opinion that having slightly blocky data that is similar to<br>
 local pixels that are close to mean is better than no data at all,<br>
 because of the clouds...
 
-beyond removing nans, i take the two water quantity layers used in <br>
-f2f, but this time i use GLDAS instead of NLDAS. the initial idea for<br>
-this paper was to try and use the deconvolution algorithm to improve <br>
-the GLDAS datasets. because of my extensive experience and failure with<br>
-this technique, after much consideration i've elected to forego this.<br>
-i believe using sst, creating a continuous land / sea layer with no nans, and<br>
-comparing this to just the clipped basin region values of surface and subsurface<br>
-flow make for an interesting input dataset. i still use the neural net <br>
-approach with streamflow prediction, increasing the number from a single station<br>
-per basin in f2f to several measurements at any given time for columbia or yukon.<br>
-the hypothesis is that in between the success of f2f and the failure of f2f as <br>
-a deconvolution tool, we might find a better grasp of the limits of the neural network.
+beyond removing nans, i take the two water quantity layers used <br>
+in f2f, but this time i use GLDAS instead of NLDAS. the initial<br>
+idea for this paper was to try and use the deconvolution <br>
+algorithm to improve the GLDAS datasets. because of my extensive<br> 
+experience and failure with this technique, after much consideration<br>
+i've elected to forego this. i believe using sst, creating a <br>
+continuous land / sea layer with no nans, and comparing this to just<br>
+the clipped basin region values of surface and subsurface flow make <br>
+for an interesting input dataset. i still use the neural net approach<br>
+with streamflow prediction, increasing the number from a single<br>
+station per basin in f2f to several measurements at any given time <br>
+for columbia or yukon. the hypothesis is that in between the <br>
+success of f2f and the failure of f2f as a deconvolution tool, <br>
+we might find a better grasp of the limits of the neural network.
 

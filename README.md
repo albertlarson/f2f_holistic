@@ -10,7 +10,7 @@ from 2021 / early 2022, sea surface temperature. my revisit<br>
 is in the repository <a target='_blank' href='https://github.com/albertlarson/aqua'>aqua</a>, named after the aqua satellite.<br>
 
 spending more time attempting to deconvolve sst fields,<br>
-this time of using L3 Aqua AMSR-E and MODIS as the<br>
+this time by using L3 Aqua AMSR-E and MODIS as the<br>
 input and target whilst comparing to Argo ISAS. i found<br>
 again the algorithm and architecture to be wanting. the<br>
 target size is just in my opinion too large. 

@@ -1,6 +1,9 @@
+*.cool
 *.nc4
 drought/
 shapes/
 *.nc
 nasacreds.txt
 .ipynb_checkpoints
+*.pt
+*.npy

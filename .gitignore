@@ -7,7 +7,4 @@ nasacreds.txt
 .ipynb_checkpoints
 *.pt
 *.npy
-<<<<<<< HEAD
-=======
 *.idk
->>>>>>> b30a0d7932d25662769da95ddc368f883573a0c5

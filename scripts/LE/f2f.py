@@ -27,6 +27,13 @@ class dset_maker(torch.utils.data.Dataset):
         return x, y,
     def __len__(self):
         return self.x.shape[0]
+    
+def fill_NOwhiten(x):
+    a1 = torch.nanmean(x)
+    # b1 = np.nanstd(x)
+    y = torch.where(torch.isfinite(x)==False,a1,x)
+    # y = (y-a1)/b1
+    return y  
 
 class a_linear(torch.nn.Module):
     def __init__(self,XXXX,XX,intermed_layer_size):
@@ -64,15 +71,14 @@ class a_linear(torch.nn.Module):
 #         return o
     
 class a(torch.nn.Module):
-    def __init__(self,XXXX,XX):
+    def __init__(self,XXXX,XX,chanz):
         super(a,self).__init__()
         chonz = 32
-        
         #i/o sizes
         self.XXXX = XXXX
         self.XX = XX
         # into conv 
-        self.conv1 = torch.nn.Conv2d(in_channels=1, out_channels=chonz, kernel_size=3, padding=1, bias=False)
+        self.conv1 = torch.nn.Conv2d(in_channels=chanz, out_channels=chonz, kernel_size=3, padding=1, bias=False)
         self.relu = torch.nn.ReLU(inplace=True)
         # residual / latent space layers
         hidden_layers = []
@@ -82,7 +88,7 @@ class a(torch.nn.Module):
             hidden_layers.append(torch.nn.ReLU(inplace=True))
         self.mid_layer = torch.nn.Sequential(*hidden_layers)
         # out of conv into perceptronesque / encoder
-        self.conv3 = torch.nn.Conv2d(in_channels=chonz, out_channels=1, kernel_size=3, padding=1, bias=False) #anything below this is for shrinking 
+        self.conv3 = torch.nn.Conv2d(in_channels=chonz, out_channels=chanz, kernel_size=3, padding=1, bias=False) #anything below this is for shrinking 
         self.linear1 = torch.nn.Linear(self.XXXX,100) ### this is what gets changed based on important switch
         self.linear2 = torch.nn.Linear(100,50)
         self.linear3 = torch.nn.Linear(50,20)

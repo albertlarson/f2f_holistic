@@ -1,3 +1,6 @@
+*.out
+*.pyc
+*.ptm
 *.what
 *.cool
 *.nc4
